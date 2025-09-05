@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+
+body {
+    background: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,h2,h3 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  margin-bottom: 16px;
+  }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #afafaf;
+
+} 
+  
+a {
+    color:#02a8a8;
+    text-decoration: none
+}
+
+a:hover {
+color: #007070; 
+}
+
+a:active {
+    color: #039292; 
+}
+
+
+
+.container {
+max-width: 750px;
+margin: auto;
+padding-top: 30px;
+}
+
+
+.info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    width: 50%;
+
+}
+
+.avatar {
+    width: 240px;
+    height: 240px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: top;    
+    box-shadow: 4px 8px 24px rgba(50, 50, 50, 0.1);
+    margin-right: 40px;
+   }
+
+.card {
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    box-shadow: 4px 8px 24px rgba(50, 50, 50, 0.1);
+}
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding-bottom: 8px;
+    
+}
+
+.table td:nth-child(1) {
+    width: 36%;
+}
+
+.table td:nth-child(2) {
+    font-weight: 500;
+}
+
+.table td:nth-child(3) {
+    color: #8b8b8b;
+    text-align: right;
+}
+
+.list {
+    padding: 0 24px;
+}
+
+.list li {
+    padding-bottom: 8px;
+}
+
+.bg-white {
+    background: #ffffff;
+}
+
+
+.contact h2 {
+text-align: center;
+}
+
+.form-group {
+margin-bottom: 40px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    color: rgb(0, 0, 0);
+}
+
+.form-group input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #afafaf;
+    color: black;
+    padding: 15px 0 10px;
+    outline: none;
+    font-family: inherit;
+    
+}
+
+.btn {
+    background: #111;
+    padding: 16px 24px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #11e2e2;
+    color: #000000;
+   }
