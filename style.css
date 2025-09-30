@@ -165,6 +165,7 @@ text-align: center;
   object-fit:cover;
   border-radius:16px;
   margin: 8px;
+  box-shadow: 4px 8px 24px rgba(50, 50, 50, 0.1);
 }
 
 .portfolio-block img :last-child{
