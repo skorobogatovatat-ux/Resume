@@ -2,14 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 
 
+:root{
+  --gap:16px;
+  --radius: 16px;
+  --bg: rgb(240, 240, 240);
+  --card-bg: #ffffff;
+  --muted: #666;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
 body {
     background: rgb(240, 240, 240);
     color: rgb(50, 50, 50);
-
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    margin:0;
+ }
+
+.container {
+max-width:940px;
+margin:40px auto;
+padding:20px;
 }
 
 h1,h2,h3 {
@@ -27,6 +43,10 @@ hr {
   background-color: #afafaf;
 
 } 
+
+.text-center {
+  text-align: center;
+}
   
 a {
     color:#02a8a8;
@@ -40,15 +60,6 @@ color: #007070;
 a:active {
     color: #039292; 
 }
-
-
-
-.container {
-max-width: 750px;
-margin: auto;
-padding-top: 30px;
-}
-
 
 .info {
     display: flex;
@@ -116,42 +127,70 @@ padding-top: 30px;
 text-align: center;
 }
 
-.form-group {
-margin-bottom: 40px;
+
+.portfolio-block{
+  display:flex;
+  border-radius:var(--radius);
+  align-items:stretch;
+  gap:2%;
 }
 
-.form-group label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.025em;
-    color: rgb(0, 0, 0);
+.portfolio-block.reverse{
+  flex-direction:row-reverse;
 }
 
-.form-group input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #afafaf;
-    color: black;
-    padding: 15px 0 10px;
-    outline: none;
-    font-family: inherit;
-    
+.portfolio-block .left,
+.portfolio-block .right{
+  display:flex;
+  flex-direction:column;
+
 }
 
-.btn {
-    background: #111;
-    padding: 16px 24px;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-family: inherit;
-    cursor: pointer;
+/* Соотношения */
+.portfolio-block:not(.reverse){
+  --left-basis:60%;
+  --right-basis:38%;
+}
+.portfolio-block.reverse{
+  --left-basis:38%;
+  --right-basis:60%;
+}
+.portfolio-block > .left{flex:0 0 var(--left-basis);}
+.portfolio-block > .right{flex:0 0 var(--right-basis);}
+
+/* Изображения */
+.portfolio-block img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:16px;
+  margin: 8px;
 }
 
-.btn:hover {
-    background: #11e2e2;
-    color: #000000;
-   }
+.portfolio-block img :last-child{
+margin: 0px;
+}  
+
+/* Все картинки должны занимать равную общую высоту */
+.portfolio-block > .left img:only-of-type,
+.portfolio-block > .right img:only-of-type{
+  height:calc(2 * 200px + var(--gap));
+}
+
+.portfolio-block .left img,
+.portfolio-block .right img{
+  height:200px;
+}
+
+@media (max-width:880px){
+  .portfolio-block{flex-direction:column;}
+  .portfolio-block.reverse{flex-direction:column;}
+  .portfolio-block > .left,
+  .portfolio-block > .right{flex:1 1 auto;}
+  .portfolio-block img{height:auto;}
+}
+
+@media (max-width:420px){
+  header h1{font-size:1.6rem}
+  .portfolio-block{padding:12px}
+}
